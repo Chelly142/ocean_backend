@@ -53,7 +53,9 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'ocean_backend.urls'
-
+ALLOWED_HOSTS = [
+    ".ap-northeast-2.compute.amazonaws.com"
+]
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
