@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-!6rm^kwwmzz+l-z_h9jvke1s7-ic1i+b%ro1it%z$975ydmho_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    ".ap-northeast-2.compute.amazonaws.com"
+]
 
 
 # Application definition
@@ -53,9 +55,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'ocean_backend.urls'
-ALLOWED_HOSTS = [
-    ".ap-northeast-2.compute.amazonaws.com"
-]
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
