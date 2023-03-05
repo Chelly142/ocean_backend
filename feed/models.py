@@ -3,6 +3,7 @@ from user.models import User
 
 # Create your models here.
 class Feed(models.Model):
+    name = models.CharField(('feedname'), max_length=20, unique=True,default='')
     feed_id = models.CharField(("feed id"), max_length=50)
     user_id = models.ForeignKey(User, related_name="user", on_delete=models.CASCADE, db_column="user_id")
     photos = models.ImageField(("photos"), upload_to=None, height_field=None, width_field=None, max_length=None)
