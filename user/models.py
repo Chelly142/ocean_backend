@@ -9,7 +9,7 @@ class User(models.Model):
         ('W', '여성'),
     )
     name = models.CharField(('username'), max_length=20, unique=True,default='')
-    user_id = models.CharField(('user id'), max_length=32, unique=True,default='')
+    user_id = models.CharField(('user id'), max_length=32, unique=True,)
     user_password = models.CharField(('user password'), max_length=128)
     nickname = models.CharField(('nickname'), max_length=20, unique=True)
     is_staff = models.BooleanField(('staff status'), default=False)
