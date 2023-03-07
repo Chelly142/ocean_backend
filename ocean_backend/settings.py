@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'user',
     'feed',
+    'activity',
     'rest_framework',
 ]
 

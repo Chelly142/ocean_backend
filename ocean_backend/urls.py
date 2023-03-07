@@ -19,11 +19,13 @@ from ocean_backend import settings
 from django.conf.urls.static import static
 from user.views import UserListAPI
 from feed.views import FeedListAPI
+from activity.views import ActivityListAPI
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/user/', UserListAPI.as_view()),
     path('api/feed/', FeedListAPI.as_view()),
+    path('api/activity/', ActivityListAPI.as_view()),
 ]
 
 urlpatterns += \
