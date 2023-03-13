@@ -8,8 +8,8 @@ from user.models import User
     
 class Feed(models.Model):
     feed_id = models.AutoField(('feed_id'),primary_key=True,)
-    user_id = models.ForeignKey(User, related_name="user", on_delete=models.CASCADE, db_column="user_id",)
-    feed_activity = models.ForeignKey(Activity, related_name="activity", on_delete=models.CASCADE, db_column="activity_name")
+    user_id = models.ForeignKey(User, related_name="user", on_delete=models.CASCADE, to_field="user_id")
+    feed_activity = models.ForeignKey(Activity, related_name="activity", on_delete=models.CASCADE,to_field="activity_name")
     photos = models.ImageField(("photos"), upload_to="feed/images",blank=True, height_field=None, width_field=None, max_length=None)
     location = models.CharField(("location"), max_length=50)
     time = models.DateTimeField(("time"), auto_now=False, auto_now_add=True)
@@ -19,4 +19,5 @@ class Feed(models.Model):
 
     def __int__(self):
         return self.feed_id
-
+    def get_activity_name(self):
+        return self.feed_activity.activity_name
